@@ -1,0 +1,939 @@
+{
+	"info": {
+		"_postman_id": "8d7fd5db-9068-41c7-95af-f42ee1e4ec87",
+		"name": "ITBunnies",
+		"description": "Апи эндпоинты для взаимодействия с базой данных проекта ITBunnies.\n\nКруды для сущностей пользователей и проектов\n\nВозможность добавить пользователя в проект\n\nДля проекта имеется эндпоинт для получения всех пользователей проекта в виде { user,user }\n\nДля пользователя аналогичный эндпоинт для получения всех проектов в которых он зарегестрирован { project,project }",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29443735"
+	},
+	"item": [
+		{
+			"name": "project",
+			"item": [
+				{
+					"name": "create project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ITBuniies\",\r\n    \"description\":\"best team ever\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create project",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"ITBuniies\",\r\n    \"description\":\"best team ever\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/projects",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"projects"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "146"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:29:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"ITBuniies\",\n    \"description\": \"best team ever\",\n    \"createdAt\": \"2024-07-27T21:29:46.841+00:00\",\n    \"updatedAt\": \"2024-07-27T21:29:46.842+00:00\",\n    \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "get project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get project by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/projects/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"projects",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "207"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:35:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"ITBuniies\",\n    \"description\": \"best team ever\",\n    \"photos\": null,\n    \"notes\": null,\n    \"technologies\": null,\n    \"status\": null,\n    \"createdAt\": \"2024-07-27T21:29:46.000+00:00\",\n    \"updatedAt\": \"2024-07-27T21:29:46.000+00:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update project",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"notest\":[\"test\",\"test\"],\r\n    \"technologies\":[\"node js\",\"react\",\"aws\"],\r\n    \"status\":\"development\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/projects/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"projects",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "237"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:48:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"ITBuniies\",\n    \"description\": \"best team ever\",\n    \"photos\": null,\n    \"notes\": null,\n    \"technologies\": [\n        \"node js\",\n        \"react\",\n        \"aws\"\n    ],\n    \"status\": \"development\",\n    \"createdAt\": \"2024-07-27T21:29:46.000+00:00\",\n    \"updatedAt\": \"2024-07-27T21:48:05.161+00:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add members",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"users\":[1],\r\n    \"roles\":[\"test\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/projects/1/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"projects",
+								"1",
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get project team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/projects/1/team",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"projects",
+								"1",
+								"team"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get team with roles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/projects/1/team",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"projects",
+										"1",
+										"team"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "305"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jul 2024 16:15:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"test\": {\n        \"id\": 1,\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Morgan\",\n        \"email\": \"test@test.test\",\n        \"bio\": null,\n        \"interests\": null,\n        \"technologies\": null,\n        \"experience\": null,\n        \"phone\": null,\n        \"telegramLink\": null,\n        \"portfolioLink\": null,\n        \"photoUrl\": null,\n        \"createdAt\": \"2024-07-28T15:52:22.000+00:00\",\n        \"updatedAt\": \"2024-07-28T15:52:22.000+00:00\"\n    }\n}"
+						},
+						{
+							"name": "get project team",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/projects/1/team",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"projects",
+										"1",
+										"team"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "set-cookie",
+									"value": "adonis-session=s%3AeyJtZXNzYWdlIjoib285emxjN3F5ZjVmN3FqMHM0d3I5ZzBkIiwicHVycG9zZSI6ImFkb25pcy1zZXNzaW9uIn0.3rwHOxWjz8yXcuLNI2KjThepy5Ef1U5Z-1H-0e3GxH4; Max-Age=7200; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "set-cookie",
+									"value": "oo9zlc7qyf5f7qj0s4wr9g0d=e%3ADPUF77b5qj9I2r2acB830_elLs2_8L1IBs1WIRRXuzngf4j3CIbbQayzpSEBDdZLrQuDNi7OHOOuQyAe_tbaSKI23NLSxIaDLTOakCF4i4l3-l56pUSS-Ir2GEF_svBW.M1A1bUQ3Q0E5bGJsVnFPeg.lhyvd5KaRGU5HpB7m2hihzOgdFsEX0mlK7R0VWlOkwg; Max-Age=7200; Path=/; HttpOnly; SameSite=Lax"
+								},
+								{
+									"key": "content-length",
+									"value": "476"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 30 Jul 2024 02:12:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"test\": {\n        \"id\": 1,\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Morgan\",\n        \"email\": \"jrmlelantus@gmail.com\",\n        \"bio\": \"node js devloper at ITBunnies\",\n        \"interests\": \"sometimes I play factorio and sometimes I create cool things\",\n        \"technologies\": [\n            \"JavaScript\",\n            \"TypeScript\",\n            \"NodeJs\",\n            \"Express\",\n            \"Adonis\",\n            \"MongoDb,MySQL\",\n            \"AWS,cloud\"\n        ],\n        \"experience\": null,\n        \"phone\": null,\n        \"telegramLink\": null,\n        \"portfolioLink\": null,\n        \"photoUrl\": null,\n        \"createdAt\": \"2024-07-30T02:09:26.000+00:00\",\n        \"updatedAt\": \"2024-07-30T02:10:43.000+00:00\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Alex\",\r\n    \"lastName\":\"Morgan\",\r\n    \"email\":\"test@test.test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Alex\",\r\n    \"lastName\":\"Morgan\",\r\n    \"email\":\"test@test.test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "160"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"Alex\",\n    \"lastName\": \"Morgan\",\n    \"email\": \"test@test.test\",\n    \"createdAt\": \"2024-07-27T21:43:17.976+00:00\",\n    \"updatedAt\": \"2024-07-27T21:43:17.976+00:00\",\n    \"id\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "296"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jul 2024 12:15:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"firstName\": \"Alex\",\n    \"lastName\": \"Morgan\",\n    \"email\": \"test@test.test\",\n    \"bio\": null,\n    \"interests\": null,\n    \"technologies\": null,\n    \"experience\": null,\n    \"phone\": null,\n    \"telegramLink\": null,\n    \"portfolioLink\": null,\n    \"photoUrl\": null,\n    \"createdAt\": \"2024-07-25T11:32:32.000+00:00\",\n    \"updatedAt\": \"2024-07-25T11:32:32.000+00:00\"\n}"
+						},
+						{
+							"name": "not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/users/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "2006"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jul 2024 15:18:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Row not found\",\n    \"name\": \"Exception\",\n    \"status\": 404,\n    \"frames\": [\n        {\n            \"file\": \"Users/alex/projects/js/adonis/exampleApp/testBD/node_modules/@adonisjs/lucid/build/src/orm/query_builder/index.js\",\n            \"filePath\": \"C:/Users/alex/projects/js/adonis/exampleApp/testBD/node_modules/@adonisjs/lucid/build/src/orm/query_builder/index.js\",\n            \"line\": 370,\n            \"callee\": \"ModelQueryBuilder.firstOrFail\",\n            \"calleeShort\": \"firstOrFail\",\n            \"column\": 19,\n            \"context\": {\n                \"start\": 365,\n                \"pre\": \"     * will implicitly set a `limit` on the query\\n     */\\n    async firstOrFail() {\\n        const row = await this.first();\\n        if (!row) {\",\n                \"line\": \"            throw new errors.E_ROW_NOT_FOUND();\",\n                \"post\": \"        }\\n        return row;\\n    }\\n    /**\\n     * Load aggregate value as a sub-query for a relationship\"\n            },\n            \"isModule\": false,\n            \"isNative\": false,\n            \"isApp\": false\n        },\n        {\n            \"file\": \"app/controllers/users_controller.ts\",\n            \"filePath\": \"c:/Users/alex/projects/js/adonis/exampleApp/testBD/app/controllers/users_controller.ts\",\n            \"line\": 37,\n            \"callee\": \"UsersController.show\",\n            \"calleeShort\": \"show\",\n            \"column\": 18,\n            \"context\": {\n                \"start\": 32,\n                \"pre\": \"\\n  /**\\n   * Show individual record\\n   */\\n  async show({ params }: HttpContext) {\",\n                \"line\": \"    const user = await User.findOrFail(params.id)\",\n                \"post\": \"    return user\\n  }\\n\\n  /**\\n   * Handle form submission for the edit action\"\n            },\n            \"isModule\": false,\n            \"isNative\": false,\n            \"isApp\": true\n        },\n        {\n            \"file\": \"app/middleware/error_handler_middleware.ts\",\n            \"filePath\": \"c:/Users/alex/projects/js/adonis/exampleApp/testBD/app/middleware/error_handler_middleware.ts\",\n            \"line\": 10,\n            \"callee\": \"ErrorHandlerMiddleware.handle\",\n            \"calleeShort\": \"handle\",\n            \"column\": 7,\n            \"context\": {\n                \"start\": 5,\n                \"pre\": \"  async handle(ctx: HttpContext, next: NextFn) {\\n    /**\\n     * Middleware logic goes here (before the next call)\\n     */\\n    try {\",\n                \"line\": \"      await next()\",\n                \"post\": \"    } catch (error) {\\n      console.error(error)\\n      const status = error.status || 500\\n      const message = error.message || 'Something went wrong'\\n\"\n            },\n            \"isModule\": false,\n            \"isNative\": false,\n            \"isApp\": true\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "298"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jul 2024 12:16:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Alex\",\n        \"lastName\": \"Morgan\",\n        \"email\": \"test@test.test\",\n        \"bio\": null,\n        \"interests\": null,\n        \"technologies\": null,\n        \"experience\": null,\n        \"phone\": null,\n        \"telegramLink\": null,\n        \"portfolioLink\": null,\n        \"photoUrl\": null,\n        \"createdAt\": \"2024-07-25T11:32:32.000+00:00\",\n        \"updatedAt\": \"2024-07-25T11:32:32.000+00:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\":\"Alex\",\r\n  \"lastName\":\"Morgan\",\r\n  \"email\":\"jrmlelantus@gmail.com\",\r\n  \"bio\":\"node js devloper at ITBunnies\",\r\n  \"interests\":\"sometimes I play factorio and sometimes I create cool things\",\r\n  \"technologies\": [\r\n    \"JavaScript\",\r\n    \"TypeScript\",\r\n    \"NodeJs\",\r\n    \"Express\",\r\n    \"Adonis\",\r\n    \"MongoDb,MySQL\",\r\n    \"AWS,cloud\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\":\"Alex\",\r\n  \"lastName\":\"Morgan\",\r\n  \"email\":\"jrmlelantus@gmail.com\",\r\n  \"bio\":\"node js devloper at ITBunnies\",\r\n  \"interests\":\"sometimes I play factorio and sometimes I create cool things\",\r\n  \"technologies\": [\r\n    \"JavaScript\",\r\n    \"TypeScript\",\r\n    \"NodeJs\",\r\n    \"Express\",\r\n    \"Adonis\",\r\n    \"MongoDb,MySQL\",\r\n    \"AWS,cloud\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "1463"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:42:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User with id 1 not found\",\n    \"name\": \"NotFoundException\",\n    \"status\": 404,\n    \"frames\": [\n        {\n            \"file\": \"app/controllers/users_controller.ts\",\n            \"filePath\": \"c:/Users/alex/projects/js/adonis/exampleApp/testBD/app/controllers/users_controller.ts\",\n            \"line\": 47,\n            \"callee\": \"UsersController.update\",\n            \"calleeShort\": \"update\",\n            \"column\": 13,\n            \"context\": {\n                \"start\": 42,\n                \"pre\": \"   * Handle form submission for the edit action\\n   */\\n  async update({ params, request, response }: HttpContext) {\\n    const user = await User.findBy('id', params.id)\\n    if (!user) {\",\n                \"line\": \"      throw new NotFoundException(`User with id ${params.id} not found`)\",\n                \"post\": \"    }\\n    const validatedData = await request.validateUsing(updateUserValidator)\\n\\n    user.merge(validatedData)\\n    await user.save()\"\n            },\n            \"isModule\": false,\n            \"isNative\": false,\n            \"isApp\": true\n        },\n        {\n            \"file\": \"app/middleware/error_handler_middleware.ts\",\n            \"filePath\": \"c:/Users/alex/projects/js/adonis/exampleApp/testBD/app/middleware/error_handler_middleware.ts\",\n            \"line\": 10,\n            \"callee\": \"ErrorHandlerMiddleware.handle\",\n            \"calleeShort\": \"handle\",\n            \"column\": 7,\n            \"context\": {\n                \"start\": 5,\n                \"pre\": \"  async handle(ctx: HttpContext, next: NextFn) {\\n    /**\\n     * Middleware logic goes here (before the next call)\\n     */\\n    try {\",\n                \"line\": \"      await next()\",\n                \"post\": \"    } catch (error) {\\n      console.error(error)\\n      const status = error.status || 500\\n      const message = error.message || 'Something went wrong'\\n\"\n            },\n            \"isModule\": false,\n            \"isNative\": false,\n            \"isApp\": true\n        }\n    ]\n}"
+						},
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\":\"Alex\",\r\n  \"lastName\":\"Morgan\",\r\n  \"email\":\"jrmlelantus@gmail.com\",\r\n  \"bio\":\"node js devloper at ITBunnies\",\r\n  \"interests\":\"sometimes I play factorio and sometimes I create cool things\",\r\n  \"technologies\": [\r\n    \"JavaScript\",\r\n    \"TypeScript\",\r\n    \"NodeJs\",\r\n    \"Express\",\r\n    \"Adonis\",\r\n    \"MongoDb,MySQL\",\r\n    \"AWS,cloud\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "467"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Jul 2024 21:43:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"firstName\": \"Alex\",\n    \"lastName\": \"Morgan\",\n    \"email\": \"jrmlelantus@gmail.com\",\n    \"bio\": \"node js devloper at ITBunnies\",\n    \"interests\": \"sometimes I play factorio and sometimes I create cool things\",\n    \"technologies\": [\n        \"JavaScript\",\n        \"TypeScript\",\n        \"NodeJs\",\n        \"Express\",\n        \"Adonis\",\n        \"MongoDb,MySQL\",\n        \"AWS,cloud\"\n    ],\n    \"experience\": null,\n    \"phone\": null,\n    \"telegramLink\": null,\n    \"portfolioLink\": null,\n    \"photoUrl\": null,\n    \"createdAt\": \"2024-07-27T21:43:17.000+00:00\",\n    \"updatedAt\": \"2024-07-27T21:43:57.387+00:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get user projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/users/1/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users",
+								"1",
+								"projects"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get projects",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/users/1/projects",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"1",
+										"projects"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "515"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jul 2024 00:18:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"ITBuniies\",\n        \"description\": \"best team ever\",\n        \"photos\": null,\n        \"notes\": null,\n        \"technologies\": null,\n        \"status\": null,\n        \"createdAt\": \"2024-07-27T22:44:54.000+00:00\",\n        \"updatedAt\": \"2024-07-27T22:44:54.000+00:00\",\n        \"team\": [\n            {\n                \"id\": 1,\n                \"firstName\": \"Alex\",\n                \"lastName\": \"Morgan\",\n                \"email\": \"test@test.test\",\n                \"bio\": null,\n                \"interests\": null,\n                \"technologies\": null,\n                \"experience\": null,\n                \"phone\": null,\n                \"telegramLink\": null,\n                \"portfolioLink\": null,\n                \"photoUrl\": null,\n                \"createdAt\": \"2024-07-27T22:44:47.000+00:00\",\n                \"updatedAt\": \"2024-07-27T22:44:47.000+00:00\"\n            }\n        ]\n    }\n]"
+						},
+						{
+							"name": "get user projects and role in",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/users/1/projects",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"users",
+										"1",
+										"projects"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "216"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jul 2024 16:58:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"test\": {\n        \"id\": 1,\n        \"name\": \"ITBuniies\",\n        \"description\": \"best team ever\",\n        \"photos\": null,\n        \"notes\": null,\n        \"technologies\": null,\n        \"status\": null,\n        \"createdAt\": \"2024-07-28T15:52:26.000+00:00\",\n        \"updatedAt\": \"2024-07-28T15:52:26.000+00:00\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
