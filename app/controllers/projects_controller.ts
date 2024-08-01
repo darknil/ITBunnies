@@ -19,36 +19,42 @@ export default class ProjectsController {
   /**
    * Handle form submission for the create action
    */
-  async store({ request }: HttpContext) {
+  async store({ request, response }: HttpContext) {
     const payload = await request.validateUsing(createProjectValidator)
     const existingProject = await Project.findBy('name', payload.name)
     if (existingProject) {
       throw new AlreadyExistsException('Project already exists')
     }
     const project = await Project.create(payload)
-    return project
+    return response.created({ message: 'Project created successfully', data: project })
   }
 
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {
+  async show({ params, response }: HttpContext) {
     const project = await Project.findBy('id', params.id)
     if (!project) {
       throw new NotFoundException('Project not found')
     }
-    return project
+    return response.status(200).json({
+      message: 'success',
+      data: project,
+    })
   }
 
   /**
    * Handle form submission for the edit action
    */
-  async update({ params, request }: HttpContext) {
+  async update({ params, request, response }: HttpContext) {
     const project = await Project.findOrFail(params.id)
     const payload = await request.validateUsing(updateProjectValidator)
     project.merge(payload)
     await project.save()
-    return project
+    return response.status(200).json({
+      message: 'updated',
+      data: project,
+    })
   }
 
   /**
@@ -90,7 +96,7 @@ export default class ProjectsController {
       return response.status(500).send({ message: 'Failed to add users to project', error })
     }
   }
-  async getProjectUsers({ params }: HttpContext) {
+  async getProjectUsers({ params, response }: HttpContext) {
     const project = await Project.findBy('id', params.id)
     if (!project) {
       throw new NotFoundException('Project not found')
@@ -122,6 +128,9 @@ export default class ProjectsController {
       result[user.$extras.pivot_role] = user
     })
 
-    return result
+    return response.status(200).json({
+      message: 'success',
+      data: result,
+    })
   }
 }
