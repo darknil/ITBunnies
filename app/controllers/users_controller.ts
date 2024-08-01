@@ -9,7 +9,9 @@ export default class UsersController {
    */
   async index({}: HttpContext) {
     const users = await User.all()
-    return users
+    return {
+      data: users.map((user) => user.toJSON()), // Преобразование модели в обычный объект
+    }
   }
 
   /**
@@ -24,7 +26,7 @@ export default class UsersController {
     }
     try {
       const user = await User.create(payload)
-      return user
+      return response.created({ message: 'User created successfully', data: user })
     } catch (error) {
       throw new Error('User creation failed')
     }
@@ -33,12 +35,15 @@ export default class UsersController {
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {
+  async show({ params, response }: HttpContext) {
     const user = await User.findBy('id', params.id)
     if (!user) {
       throw new NotFoundException(`User with id ${params.id} not found`)
     }
-    return user
+    return response.status(200).json({
+      message: 'success',
+      data: user,
+    })
   }
 
   /**
@@ -53,7 +58,10 @@ export default class UsersController {
 
     user.merge(validatedData)
     await user.save()
-    return user
+    return response.status(200).json({
+      message: 'updated',
+      data: user,
+    })
   }
 
   /**
@@ -67,7 +75,7 @@ export default class UsersController {
     await user.delete()
     return user
   }
-  async getUserProjects({ params }: HttpContext) {
+  async getUserProjects({ params, response }: HttpContext) {
     const user = await User.findBy('id', params.id)
     if (!user) {
       throw new NotFoundException(`User with id ${params.id} not found`)
@@ -82,6 +90,9 @@ export default class UsersController {
       result[role] = project
     })
 
-    return result
+    return response.status(200).json({
+      message: 'success',
+      data: result,
+    })
   }
 }
