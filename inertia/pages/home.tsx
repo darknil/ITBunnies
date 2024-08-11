@@ -6,12 +6,12 @@ export default function Home(props: { version: number }) {
       <Head title="Homepage" />
 
       <div className="container">
-        <div className="title">AdonisJS {props.version} x Inertia x React</div>
+        <div className="title">ITBunnies best team</div>
 
-        <span>
-          Learn more about AdonisJS and Inertia.js by visiting the{' '}
-          <a href="https://docs.adonisjs.com/guides/inertia">AdonisJS documentation</a>.
-        </span>
+        <img
+          src="https://storage.googleapis.com/public_bucket-1231/photo_2023-12-11_15-13-05.jpg"
+          alt=""
+        />
       </div>
     </>
   )
